@@ -16,12 +16,12 @@
 		"enabled": true
 	},
 	"clockCard": {
-		"width": 232,
-		"height": 132,
+		"width": 288,
+		"height": 130,
 		"offset": 92,
 		"order": 4,
-		"offsetX": null,
-		"offsetY": null,
+		"offsetX": 215,
+		"offsetY": -217,
 		"enabled": true
 	},
 	"calendarCard": {

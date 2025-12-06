@@ -70,6 +70,6 @@
 			"order": 4
 		}
 	],
-	"clockShowSeconds": false,
+	"clockShowSeconds": true,
 	"summaryInContent": false
 }
