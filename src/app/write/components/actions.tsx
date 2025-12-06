@@ -22,20 +22,20 @@ export function WriteActions() {
 		}
 	}
 
-	const handleCancel = async () => {
+	const handleCancel = () => {
         if (!window.confirm('确定放弃本次修改吗？内容将恢复到上次保存的状态。')) {
             return
         }
+		
         try {
-            if (originalSlug) {
-                await loadBlogForEdit(originalSlug)
-                toast.info('已恢复到原始版本')
-            } else {
-                toast.warning('无法找到原始文章，已重置')
-                // reset()
-            }
-        } catch (error) {
-            toast.error('恢复原始版本失败')
+			if (mode === 'edit' && originalSlug) {
+				// 编辑模式：回退到文章详情页
+				router.push(`/blog/${originalSlug}`)
+			} else {
+				// 新建模式：回退到首页
+				router.push('/')
+				// reset() // 可选：顺便清空 store
+			}
         }
     }
 	
