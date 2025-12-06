@@ -23,7 +23,7 @@ export function WriteActions() {
 	}
 
 	const handleCancel = () => {
-        if (!window.confirm('确定放弃本次修改吗？内容将恢复到上次保存的状态。')) {
+        if (!window.confirm('放弃本次修改吗？')) {
             return
         }
 		if (mode === 'edit' && originalSlug) {
@@ -67,18 +67,9 @@ export function WriteActions() {
 			<ul className='absolute top-4 right-6 flex items-center gap-2'>
 				{mode === 'edit' && (
 					<>
-						<motion.button
-							whileHover={{ scale: 1.05 }}
-							whileTap={{ scale: 0.95 }}
-							onClick={handleCancel}
-							disabled={saving}
-							className='rounded-xl border bg-white/60 px-6 py-2 text-sm'>
-							取消
-						</motion.button>
 						<motion.div initial={{ opacity: 0, scale: 0.6 }} animate={{ opacity: 1, scale: 1 }} className='flex items-center gap-2'>
 							<div className='rounded-lg border bg-blue-50 px-4 py-2 text-sm text-blue-700'>编辑模式</div>
 						</motion.div>
-
 						<motion.button
 							initial={{ opacity: 0, scale: 0.6 }}
 							animate={{ opacity: 1, scale: 1 }}
