@@ -26,17 +26,14 @@ export function WriteActions() {
         if (!window.confirm('确定放弃本次修改吗？内容将恢复到上次保存的状态。')) {
             return
         }
-		
-        try {
-			if (mode === 'edit' && originalSlug) {
-				// 编辑模式：回退到文章详情页
-				router.push(`/blog/${originalSlug}`)
-			} else {
-				// 新建模式：回退到首页
-				router.push('/')
-				// reset() // 可选：顺便清空 store
-			}
-        }
+		if (mode === 'edit' && originalSlug) {
+			// 编辑模式：回退到文章详情页
+			router.push(`/blog/${originalSlug}`)
+		} else {
+			// 新建模式：回退到首页
+			router.push('/')
+			// reset() // 可选：顺便清空 store
+		}
     }
 	
 
