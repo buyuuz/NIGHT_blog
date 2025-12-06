@@ -1,3 +1,6 @@
+---
+hidden: true
+---
 
 基本颜色空间: HEX、RGB、HSL，以及 Alpha
 
